@@ -1,12 +1,15 @@
 #!/usr/bin/python3
-class Square:
-    """Represents a square.
-    Private instance attribute: size.
-    Instantiation with optional size.
-    """
+"""Define a class Square"""
 
-    def __init__(self, size=0):
-        """Initializes the data."""
+
+class Square:
+    """Represents a square"""
+
+    def __init__(self, size):
+        """Initialize a new Square.
+        Args:
+            size (int): The size of the new square.
+        """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         elif size < 0:
