@@ -1,37 +1,28 @@
 #!/usr/bin/python3
-"""Module 12-student.
-Creates a Student class.
+"""Module 14-pascal_triangle.
+Returns a list of lists of integers
+representing the Pascal’s triangle of n.
 """
 
 
-class Student:
-    """Class that defines a student.
-    Public attributes:
-        - first_name
-        - last_name
-        - age
-    Public method to_json().
+def pascal_triangle(n):
+    """Returns the pascal triangle of n.
+    Args:
+        - n: size of the triangle (rows)
+    Returns: a list of list of integers
     """
 
-    def __init__(self, first_name, last_name, age):
-        """Initializes the Student instance."""
+    if n <= 0:
+        return []
 
-        self.first_name = first_name
-        self.last_name = last_name
-        self.age = age
+    l = [[0 for x in range(i + 1)] for i in range(n)]
+    l[0] = [1]
 
-    def to_json(self, attrs=None):
-        """Retrieves a dictionary representation
-        of a Student instance.
-        Args:
-            - attrs: list of attributes
-        Returns: the dict representation of the instance.
-        """
-
-        my_dict = dict()
-        if type(attrs) is list and all(type(x) is str for x in attrs):
-            for x in attrs:
-                if x in self.__dict__:
-                    my_dict.update({x: self.__dict__[x]})
-            return my_dict
-        return self.__dict__.copy()
+    for i in range(1, n):
+        l[i][0] = 1
+        for j in range(1, i + 1):
+            if j < len(l[i - 1]):
+                l[i][j] = l[i - 1][j - 1] + l[i - 1][j]
+            else:
+                l[i][j] = l[i - 1][0]
+    return l
