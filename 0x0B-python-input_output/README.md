@@ -16,7 +16,6 @@ Files | Description
 [9-add_item.py](./9-add_item.py) | Python script that adds all arguments to a Python list, and then save them to a file
 [10-class_to_json.py](./10-class_to_json.py) | Python function that returns the dictionary description with simple data structure (list, dictionary, string, integer and boolean) for JSON serialization of an object
 [11-student.py](./11-student.py) | Python class Student
-[12-student.py](./12-student.py) | Python class Student (based on 11-student.py)
-[13-student.py](./13-student.py) | Python class Student (based on 12-student.py)
-[14-pascal_triangle.py](./14-pascal_triangle.py) | Python function def pascal_triangle(n): that returns a list of lists of integers representing the Pascal’s triangle of n
+[12-pascal_triangle.py](./12-pascal_triangle.py) | Python function def pascal_triangle(n): that returns a list of lists of integers representing the Pascal’s triangle of n
 [100-append_after.py](./100-append_after.py) | Python function that inserts a line of text to a file, after each line containing a specific string
+[101-stats.py](./101-stats.py) | Python function that script that reads stdin line by line and computes metrics
