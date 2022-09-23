@@ -1,23 +1,20 @@
 #!/usr/bin/python3
-"""Lists 10 commits (from themost recent to oldest)
-of a repository(first argument) by the user(second argument)
-
-Usage:
-    ./100-github_commits.py <repository name> <repository owner>
+"""Python script that takes 2 arguments in order to solve this challenge.
 """
-from sys import argv
+import sys
 import requests
 
 
-def main():
-    url = f"https://api.github.com/repos/{argv[1]}/{argv[2]}/commits"
+if __name__ == "__main__":
+    url = "https://api.github.com/repos/{}/{}/commits".format(
+        sys.argv[2], sys.argv[1])
 
-    r = requests.get(url)
-    myjson = r.json()
+    m = requests.get(url)
+    commits = m.json()
     try:
         for i in range(10):
             print("{}: {}".format(
-                myjson[i].get("sha"),
-                myjson[i].get("commit").get("author").get("name")))
+                commits[i].get("sha"),
+                commits[i].get("commit").get("author").get("name")))
     except IndexError:
         pass
